@@ -36,7 +36,7 @@ public class VideoActivty extends AppCompatActivity {
     private SimpleExoPlayer player;
     PlayerView playerView;
     Uri uri;
-
+    MediaSource mediaSource;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,7 +60,7 @@ public class VideoActivty extends AppCompatActivity {
     private void initializePlayer(Uri uri) {
         player = ExoPlayerFactory.newSimpleInstance(this);
         playerView.setPlayer(player);
-        MediaSource mediaSource = buildMediaSource(uri);
+         mediaSource = buildMediaSource(uri);
         player.prepare(mediaSource);
          player.setPlayWhenReady(true);
 
@@ -110,29 +110,37 @@ public class VideoActivty extends AppCompatActivity {
 
     public void onResume() {
         super.onResume();
-      initializePlayer(uri);
+      //initializePlayer(uri);
+     //   player.release();
 // add your code here which executes when the Fragment is visible and intractable.
     }
 
     public void onPause() {
         super.onPause();
-        player.stop();
         player.release();
+        mediaSource=null;
+        player=null;
+
+
 // add your code here which executes when user leaving the current fragment or fragment is no longer intractable.
     }
 
     public void onStop() {
         super.onStop();
-        player.stop();
+       // player.stop();
         player.release();
+        player=null;
+        mediaSource=null;
 
 // add your code here which executes Fragment going to be stopped.
     }
 
     public void onDestroy(){
         super.onDestroy();
-        player.stop();
+
         player.release();
+        player=null;
+        mediaSource=null;
     }
 
 }
