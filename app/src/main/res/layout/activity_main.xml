@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_light_background"
+    tools:context=".MainActivity">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:hint="songs"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/searchsongs"/>
+<androidx.recyclerview.widget.RecyclerView
+    android:layout_width="match_parent"
+    android:layout_marginTop="20dp"
+    android:layout_below="@+id/searchsongs"
+    android:layout_alignParentTop="false"
+    android:layout_height="wrap_content"
+    android:id="@+id/songs_list"
+    />
+    <androidx.slidingpanelayout.widget.SlidingPaneLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:id="@+id/footer"
+        android:layout_alignParentBottom="true"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/ic_skip_previous_black_24dp"
+                android:id="@+id/prevbtn"/>
+            <ImageButton
+                android:layout_marginLeft="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:id="@+id/playbtn"
+                android:src="@drawable/ic_play_arrow_black_24dp"/>
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/playbtn"
+                android:id="@+id/pausebtn"
+                android:src="@drawable/ic_pause_black_24dp"/>
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_alignParentRight="true"
+                android:id="@+id/nextbtn"
+                android:src="@drawable/ic_skip_next_black_24dp"/>
+
+            />
+        </RelativeLayout>
+
+    </androidx.slidingpanelayout.widget.SlidingPaneLayout>
+
+</RelativeLayout>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/cardview_light_background"
+        tools:context=".ui.home.HomeFragment">
+
+        <androidx.slidingpanelayout.widget.SlidingPaneLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:id="@+id/footerpanel"
+            android:visibility="gone"
+            android:layout_alignParentTop="true"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+               <ImageView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_alignParentLeft="true"
+                   android:id="@+id/musicpic"
+                   android:src="@drawable/ic_music_note_black_24dp"
+                   />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="ffhhggghgg"
+                    android:id="@+id/fsong_title"
+                    />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:orientation="horizontal">
+                    <ImageButton
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:layout_toRightOf="@+id/fsong_title"
+                        android:id="@+id/playbtn"
+                        android:src="@drawable/ic_play_arrow_black_24dp"/>
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/playbtn"
+                        android:id="@+id/pausebtn"
+                        android:src="@drawable/ic_pause_black_24dp"/>
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_alignParentRight="true"
+                        android:id="@+id/nextbtn"
+                        android:src="@drawable/ic_skip_next_black_24dp"/>
+
+                    />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </androidx.slidingpanelayout.widget.SlidingPaneLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/footerpanel"
+        android:focusable="false"
+        android:id="@+id/serachbox"
+        android:focusableInTouchMode="true"
+        >
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:hint="search"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/searchsongs"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/serachbox"
+        android:layout_alignParentTop="false"
+        android:layout_height="wrap_content"
+        android:id="@+id/songs_list"
+        />
+    </RelativeLayout>
